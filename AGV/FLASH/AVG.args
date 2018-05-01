@@ -1,0 +1,25 @@
+"./Generated_Code/Vectors_c.obj"
+"./Generated_Code/TI1_c.obj"
+"./Generated_Code/PWM2_c.obj"
+"./Generated_Code/PWM1_c.obj"
+"./Generated_Code/PE_Timer_c.obj"
+"./Generated_Code/IO_Map_c.obj"
+"./Generated_Code/Cpu_c.obj"
+"./Project_Settings/Startup_Code/startcf_c.obj"
+"./Sources/ProcessorExpert_c.obj"
+"./Sources/Events_c.obj"
+-sym full
+-msgstyle parseable
+-proc 51QE
+-lavender model=ewl ,print=int ,scan=int ,io=raw
+-nostdlib
+"$(ProjDirPath)/Project_Settings/Linker_Files/ProcessorExpert.lcf"
+-m __startup
+-L"$(MCUToolsBaseDirEnv)/ColdFire_Support/ewl/lib"
+-application
+-map
+-map keep
+-srec
+-sreclength 252
+-sreceol dos
+-w on
