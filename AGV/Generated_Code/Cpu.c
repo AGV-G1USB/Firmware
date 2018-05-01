@@ -7,7 +7,7 @@
 **     Version     : Component 01.014, Driver 01.12, CPU db: 3.00.078
 **     Datasheet   : MCF51QE128RM, Rev. 3, 9/2007
 **     Compiler    : CodeWarrior ColdFireV1 C Compiler
-**     Date/Time   : 2018-04-30, 14:15, # CodeGen: 8
+**     Date/Time   : 2018-04-30, 19:36, # CodeGen: 10
 **     Abstract    :
 **         This component "MCF51QE128_80" contains initialization of the
 **         CPU and provides basic methods and events for CPU core
@@ -41,6 +41,8 @@
 #include "PWM1.h"
 #include "PWM2.h"
 #include "TI1.h"
+#include "AS1.h"
+#include "AS2.h"
 #include "PE_Types.h"
 #include "PE_Error.h"
 #include "PE_Const.h"
@@ -182,10 +184,14 @@ void PE_low_level_init(void)
   /* SCGC2: ??=1,FLS=1,IRQ=1,KBI=1,ACMP=1,RTC=1,SPI2=1,SPI1=1 */
   setReg8(SCGC2, 0xFFU);                
   /* Common initialization of the CPU registers */
-  /* PTCDD: PTCDD1=1,PTCDD0=1 */
-  setReg8Bits(PTCDD, 0x03U);            
-  /* PTCD: PTCD1=0,PTCD0=1 */
-  clrSetReg8Bits(PTCD, 0x02U, 0x01U);   
+  /* PTCDD: PTCDD7=1,PTCDD6=0,PTCDD1=1,PTCDD0=1 */
+  clrSetReg8Bits(PTCDD, 0x40U, 0x83U);  
+  /* PTCD: PTCD7=1,PTCD1=0,PTCD0=1 */
+  clrSetReg8Bits(PTCD, 0x02U, 0x81U);   
+  /* PTBDD: PTBDD1=1,PTBDD0=0 */
+  clrSetReg8Bits(PTBDD, 0x01U, 0x02U);  
+  /* PTBD: PTBD1=1 */
+  setReg8Bits(PTBD, 0x02U);             
   /* PTASE: PTASE7=0,PTASE6=0,PTASE4=0,PTASE3=0,PTASE2=0,PTASE1=0,PTASE0=0 */
   clrReg8Bits(PTASE, 0xDFU);            
   /* PTBSE: PTBSE7=0,PTBSE6=0,PTBSE5=0,PTBSE4=0,PTBSE3=0,PTBSE2=0,PTBSE1=0,PTBSE0=0 */
@@ -229,6 +235,10 @@ void PE_low_level_init(void)
   PWM2_Init();
   /* ### TimerInt "TI1" init code ... */
   TI1_Init();
+  /* ### Asynchro serial "AS1" init code ... */
+  AS1_Init();
+  /* ### Asynchro serial "AS2" init code ... */
+  AS2_Init();
   /* Common peripheral initialization - ENABLE */
   /* TPM3SC: CLKSB=0,CLKSA=1 */
   clrSetReg8Bits(TPM3SC, 0x10U, 0x08U); 

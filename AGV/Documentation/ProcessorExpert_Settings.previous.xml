@@ -926,7 +926,7 @@
       <Counter v="TPM3" />
       <boolgroup name="Interrupt service/event" v="Disabled" />
       <Period v="1 ms" />
-      <Starting_pulse_width v="650 &amp;#181;s" />
+      <Starting_pulse_width v="350 &amp;#181;s" />
       <Aligned v="Edge" />
       <Initial_polarity v="low" />
       <Same_period_in_modes v="no" />

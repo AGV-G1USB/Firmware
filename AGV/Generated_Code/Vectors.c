@@ -5,7 +5,7 @@
 **     Processor   : MCF51QE128CLK
 **     Version     : Component 01.014, Driver 01.12, CPU db: 3.00.078
 **     Compiler    : CodeWarrior ColdFireV1 C Compiler
-**     Date/Time   : 2018-04-30, 14:03, # CodeGen: 3
+**     Date/Time   : 2018-04-30, 19:36, # CodeGen: 10
 **     Abstract    :
 **         This component "MCF51QE128_80" contains initialization of the
 **         CPU and provides basic methods and events for CPU core
@@ -35,6 +35,8 @@
 #include "PWM1.h"
 #include "PWM2.h"
 #include "TI1.h"
+#include "AS1.h"
+#include "AS2.h"
 #include "startcf.h"
 
 extern unsigned long far _SP_INIT[];
@@ -120,16 +122,16 @@ const tIsrFunc _InterruptVectorTable[103] @0x00000000 = { /* Interrupt vector ta
   Cpu_Interrupt,                       /* 0x49  0x00000124   -   -   ivVtpm2ovf    unused by PE */
   Cpu_Interrupt,                       /* 0x4A  0x00000128   -   -   ivVspi2       unused by PE */
   Cpu_Interrupt,                       /* 0x4B  0x0000012C   -   -   ivVspi1       unused by PE */
-  Cpu_Interrupt,                       /* 0x4C  0x00000130   -   -   ivVsci1err    unused by PE */
-  Cpu_Interrupt,                       /* 0x4D  0x00000134   -   -   ivVsci1rx     unused by PE */
-  Cpu_Interrupt,                       /* 0x4E  0x00000138   -   -   ivVsci1tx     unused by PE */
+  AS1_InterruptError,                  /* 0x4C  0x00000130   4   5   ivVsci1err    used by PE */
+  AS1_InterruptRx,                     /* 0x4D  0x00000134   4   4   ivVsci1rx     used by PE */
+  AS1_InterruptTx,                     /* 0x4E  0x00000138   4   3   ivVsci1tx     used by PE */
   Cpu_Interrupt,                       /* 0x4F  0x0000013C   -   -   ivViicx       unused by PE */
   Cpu_Interrupt,                       /* 0x50  0x00000140   -   -   ivVkeyboard   unused by PE */
   Cpu_Interrupt,                       /* 0x51  0x00000144   -   -   ivVadc        unused by PE */
   Cpu_Interrupt,                       /* 0x52  0x00000148   -   -   ivVacmpx      unused by PE */
-  Cpu_Interrupt,                       /* 0x53  0x0000014C   -   -   ivVsci2err    unused by PE */
-  Cpu_Interrupt,                       /* 0x54  0x00000150   -   -   ivVsci2rx     unused by PE */
-  Cpu_Interrupt,                       /* 0x55  0x00000154   -   -   ivVsci2tx     unused by PE */
+  AS2_InterruptError,                  /* 0x53  0x0000014C   2   5   ivVsci2err    used by PE */
+  AS2_InterruptRx,                     /* 0x54  0x00000150   2   4   ivVsci2rx     used by PE */
+  AS2_InterruptTx,                     /* 0x55  0x00000154   2   3   ivVsci2tx     used by PE */
   Cpu_Interrupt,                       /* 0x56  0x00000158   -   -   ivVrtc        unused by PE */
   Cpu_Interrupt,                       /* 0x57  0x0000015C   -   -   ivVtpm3ch0    unused by PE */
   Cpu_Interrupt,                       /* 0x58  0x00000160   -   -   ivVtpm3ch1    unused by PE */

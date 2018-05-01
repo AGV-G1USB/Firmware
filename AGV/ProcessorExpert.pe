@@ -2746,7 +2746,7 @@
       <ItemState>
         <ListItemCount>16</ListItemCount>
         <ItemSymbol>TrapExceptionsGrp</ItemSymbol>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>IntTrapGrp0</ItemSymbol>
@@ -2758,7 +2758,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>IntTrap0</ItemSymbol>
-        <Value>Vtrap0</Value>
+        <Value />
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
@@ -2784,7 +2784,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>IntTrap1</ItemSymbol>
-        <Value>Vtrap1</Value>
+        <Value />
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
@@ -2810,7 +2810,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>IntTrap2</ItemSymbol>
-        <Value>Vtrap2</Value>
+        <Value />
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
@@ -2836,7 +2836,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>IntTrap3</ItemSymbol>
-        <Value>Vtrap3</Value>
+        <Value />
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
@@ -2862,7 +2862,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>IntTrap4</ItemSymbol>
-        <Value>Vtrap4</Value>
+        <Value />
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
@@ -2888,7 +2888,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>IntTrap5</ItemSymbol>
-        <Value>Vtrap5</Value>
+        <Value />
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
@@ -2914,7 +2914,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>IntTrap6</ItemSymbol>
-        <Value>Vtrap6</Value>
+        <Value />
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
@@ -2940,7 +2940,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>IntTrap7</ItemSymbol>
-        <Value>Vtrap7</Value>
+        <Value />
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
@@ -2966,7 +2966,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>IntTrap8</ItemSymbol>
-        <Value>Vtrap8</Value>
+        <Value />
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
@@ -2992,7 +2992,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>IntTrap9</ItemSymbol>
-        <Value>Vtrap9</Value>
+        <Value />
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
@@ -3018,7 +3018,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>IntTrap10</ItemSymbol>
-        <Value>Vtrap10</Value>
+        <Value />
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
@@ -3044,7 +3044,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>IntTrap11</ItemSymbol>
-        <Value>Vtrap11</Value>
+        <Value />
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
@@ -3070,7 +3070,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>IntTrap12</ItemSymbol>
-        <Value>Vtrap12</Value>
+        <Value />
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
@@ -3096,7 +3096,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>IntTrap13</ItemSymbol>
-        <Value>Vtrap13</Value>
+        <Value />
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
@@ -3122,7 +3122,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>IntTrap14</ItemSymbol>
-        <Value>Vtrap14</Value>
+        <Value />
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
@@ -3148,7 +3148,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>IntTrap15</ItemSymbol>
-        <Value>Vtrap15</Value>
+        <Value />
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
@@ -3167,7 +3167,7 @@
       <ItemState>
         <ListItemCount>7</ListItemCount>
         <ItemSymbol>SWInterruptsGrp</ItemSymbol>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>IntSwiGrp0</ItemSymbol>
@@ -3179,7 +3179,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>IntSwi0</ItemSymbol>
-        <Value>VL1swi</Value>
+        <Value />
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
@@ -3211,7 +3211,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>IntSwi1</ItemSymbol>
-        <Value>VL2swi</Value>
+        <Value />
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
@@ -3243,7 +3243,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>IntSwi2</ItemSymbol>
-        <Value>VL3swi</Value>
+        <Value />
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
@@ -3275,7 +3275,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>IntSwi3</ItemSymbol>
-        <Value>VL4swi</Value>
+        <Value />
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
@@ -3307,7 +3307,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>IntSwi4</ItemSymbol>
-        <Value>VL5swi</Value>
+        <Value />
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
@@ -3339,7 +3339,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>IntSwi5</ItemSymbol>
-        <Value>VL6swi</Value>
+        <Value />
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
@@ -3371,7 +3371,7 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>IntSwi6</ItemSymbol>
-        <Value>VL7swi</Value>
+        <Value />
         <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
       </ItemState>
       <ItemState>
@@ -7663,7 +7663,7 @@
       <ItemState>
         <ListItemCount>16</ListItemCount>
         <ItemSymbol>TrapExceptionsGrp</ItemSymbol>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>IntTrapGrp0</ItemSymbol>
@@ -8084,7 +8084,7 @@
       <ItemState>
         <ListItemCount>7</ListItemCount>
         <ItemSymbol>SWInterruptsGrp</ItemSymbol>
-        <Expanded>false</Expanded>
+        <Expanded>true</Expanded>
       </ItemState>
       <ItemState>
         <ItemSymbol>IntSwiGrp0</ItemSymbol>
