@@ -140,71 +140,75 @@ void main(void)
 	  
 	  for(;;){
 		  
-		  switch(estado){
-		 
+		switch(estado){
+		  
 		  	  case sharp:
+		  		  
+		  		  AD1_MeasureChan(TRUE, 0);
+		  		  AD1_GetChanValue16(0, &ADC1);    // Se obtiene el valor ADC del Sharp.
+		  		  ADC1 = ADC1 >> 4;                // Se shiftea 4 veces hacia la derecha para obtener el valor real.
 
+		  		  distancia = 49.686*exp(-0.0009*ADC1);  // Ecuación lineal de caracterización del sharp.
+		  		
 		  		  break;
-		 		 
+		  		
 		  	  case leer:
-			  		  h = 0;
-			  		  
-			  		  if( data1[h] == 'F' && data1[h+1] == ' ' ){
-			  			  h = 2;
-			  		  } else if ( data1[h] == 'F' && data1[h+1] == 'F' ){
-			  			  h = 3; 
-			  		  }
-			  			  
-			  		  while(data1[h] != ' ' && r < 3){   // Guardamos en un arreglo el valor del PWM1.
-			  			  PWM1[r] = data1[h];
-			  			  r++;
-			  			  h++;
-			  		  }
-			  		  	  h++;
-			  		  while(data1[h] != ' ' && d < 1){   // Guardamos en un arreglo la dirección del PWM1.
-			  			  BIT1[d] = data1[h];
-			  			  d++;
-			  			  h++;
-			  		  }
-			  		  h++;
-			  		  while(data1[h] != ' ' && x < 3){   // Guardamos en un arreglo el valor del PWM2.
-			  			  PWM2[x] = data1[h];
-			  			  x++;
-			  			  h++;
-			  		  }
-			  		  h++;
-			  		  while(data1[h] != ' ' && y < 1){   // Guardamos en un arreglo la dirección del PWM2.
-			  			  BIT2[y] = data1[h];
-			  			  y++;
-			  			  h++;
-			  		  }
-			  		  
-			  		  // Se convierten a decimal los arreglos obtenidos.
-			  		  pwm1 = convertAsciiDec(PWM1, r);
-			  		  bit1 = convertAsciiDec(BIT1, d);
-			  		  pwm2 = convertAsciiDec(PWM2, x);
-			  		  bit2 = convertAsciiDec(BIT2, y);
-			  		  r = 0;
-			  		  d = 0;
-			  		  x = 0;
-			  		  y = 0;
-			  		  
-			  		  estado = accion;
-
-		  		  break; 
-		 		 
+		  		  
+		  		  h = 3;
+		  		  
+  				  while(data[h] != ' ' && r < 2){   // Guardamos en un arreglo el valor del centroide en X.
+		  			  MX[r] = data[h];
+		  			  r++;
+		  			  h++;
+  				  }
+		  		  
+		  		  estado = accion;
+		  		  
+		  		  break;
+		  		  
 		  	  case accion:
 		  		  
-		  		  // Se asignan los valores recibidos a los PWM.
-		  		  PWM1_Enable();
-		  		  PWM2_Enable();
-		  		  Bit1_PutVal(bit1); 
-		  		  Bit2_PutVal(bit2);
-		  		  PWM2_SetDutyUS(pwm2);
-		  		  PWM1_SetDutyUS(pwm1);
+		  		  mx = convertAsciiDec(MX, r);
 		  		  
+				  //sendComand(MX, sizeof(MX), 0);        // Enviamos el valor tomado como centroide por bluetooth para verificar que funciona correctamente.
+				  //sendComand(barrar, 1, 0);
+				  r = 0;
+				  //control(mx, distancia);
+				  
+				  AS1_RecvChar(&band);
+				  if(band == 'w' || band == 'W'){
+					  Bit1_PutVal(0);
+					  Bit2_PutVal(0);
+					  PWM1_SetDutyUS(650);
+					  PWM2_SetDutyUS(550);		
+					  sendComand(start, sizeof(start), 0);
+		  		  }else if(band == 's' || band == 'S'){
+		  			  Bit1_PutVal(1);
+		  			  Bit2_PutVal(1);
+		  			  PWM1_SetDutyUS(450);
+		  			  PWM2_SetDutyUS(500);
+		  			  sendComand(reverse, sizeof(reverse), 0);
+				  }else if(band == 'd' || band == 'D'){
+					  Bit1_PutVal(0);
+					  Bit2_PutVal(0);
+					  PWM1_SetDutyUS(400);
+					  PWM2_SetDutyUS(650);
+					  sendComand(right, sizeof(right), 0);
+		  		  }else if(band == 'a' || band == 'A'){
+		  			  Bit1_PutVal(0);
+		  			  Bit2_PutVal(0);
+		  			  PWM1_SetDutyUS(650);
+		  			  PWM2_SetDutyUS(400);
+		  			  sendComand(left, sizeof(left), 0);
+				  }else if(band == ' '){
+					  PWM1_Disable();
+					  PWM2_Disable();
+				  	  Bit3_NegVal();
+				  	  sendComand(stop, sizeof(stop), 0);
+				  }
+				  
 		  		  estado = sharp;
-		  		  break;
+		  		  break;	 
 		  }
 	  }
 

@@ -83,7 +83,15 @@ void  AS2_OnError(void)
 void  AS2_OnRxChar(void)
 {
   /* Write your code here ... */
+	AS2_RecvChar(&caracter);	   // Se recibe caracter por carácter de lo que llega de la cámara.
+	data[j] = caracter;            // El valor se guarda en un arreglo.
 	
+	if(data[j] == 13){             // Si el último caracter que se recibió es /r se deja de guardar el dato.
+		u = j;
+		j = 0;
+	}	
+	j++;
+	estado = leer;
 }
 
 /*
@@ -175,23 +183,6 @@ void  AS1_OnError(void)
 void  AS1_OnRxChar(void)
 {
   /* Write your code here ... */
-	AS1_RecvChar(&caracter1);	   // Se recibe caracter por carácter de lo que llega de la cámara.
-	
-	if (caracter1 == 'F' || bandera == 1){
-		
-		bandera = 1;
-		data1[j] = caracter1;            // El valor se guarda en un arreglo.
-			
-		if(data1[j] == 13){             // Si el último caracter que se recibió es /r se deja de guardar el dato.
-			u = j;
-			j = 0;
-			bandera = 0; 
-		}	
-		j++;
-		
-	}	
-	
-	estado = leer;
 
 }
 
